@@ -79,12 +79,15 @@ fill('#grid3d', groups['3d']); fill('#gridMixed', groups.mixed); fill('#grid2d',
 /* hero slideshow */
 const slides = [
   {id:'gravity-machine', src:ASI('103/231/885/large/ankitha-ys-1-hero-render.webp?1792024760')},
-  {id:'sunken-city', src:ASI('094/817/510/large/ankitha-y-s-frame-21.webp?1766538856')},
+  {id:'sunken-city', src:ASI('094/817/517/large/ankitha-y-s-frame-26.webp?1766538894'), banner:true},
   {id:'duskscape', src:ASI('090/338/881/large/ankitha-y-s-highresscreenshot00021.jpg?1753644086')},
   {id:'wolf-saga', src:ASI('094/896/463/large/ankitha-y-s-highresscreenshot00003.webp?1766894159')}
 ];
 const stage = $('#heroStage'), heroLink = $('#heroProject');
-slides.forEach((s,i) => { const im = new Image(); im.alt=''; im.decoding='async'; if(i>0) im.loading='lazy'; im.src = s.src; stage.appendChild(im); });
+slides.forEach((s,i) => { const im = new Image(); im.alt=''; im.decoding='async'; if(i>0) im.loading='lazy'; im.src = s.src;
+  /* these frames carry a title strip along the bottom (about 19% of the image); push it out of view */
+  if (s.banner){ im.style.height = '123.5%'; im.style.objectPosition = '50% 0'; }
+  stage.appendChild(im); });
 let cur = 0;
 function showSlide(i){
   cur = i;
