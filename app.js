@@ -51,7 +51,8 @@ function fallback(img){
 function card(p){
   const a = document.createElement('a');
   a.className = 'card'; a.href = '#/p/' + p.id;
-  const tools = (p.tools || []).slice(0,3).map(t => '<span>' + esc(t) + '</span>').join('');
+  if (p.external){ a.href = p.external; a.target = '_blank'; a.rel = 'noopener'; a.classList.add('wide'); }
+  const tools = (p.tools || []).slice(0,3).map(t => '<span>' + esc(t) + '</span>').join('') + (p.external ? '<span>Play on itch.io ↗</span>' : '');
   a.innerHTML =
     '<div class="thumb"><img loading="lazy" decoding="async" alt="' + esc(p.title) + '" src="' + esc(coverOf(p)) + '">' +
     (p.badge ? '<span class="badge">' + esc(p.badge) + '</span>' : '') + '</div>' +
@@ -154,8 +155,8 @@ function descHTML(p){
 }
 function renderProject(id){
   const p = byId[id]; const el = $('#project');
-  if (!p){ location.hash = '#top'; return; }
-  const list = groups[p.group], k = list.indexOf(p);
+  if (!p || p.external){ location.hash = '#top'; return; }
+  const list = groups[p.group].filter(x => !x.external), k = list.indexOf(p);
   const prev = list[(k-1+list.length)%list.length], next = list[(k+1)%list.length];
   const isAS = !!p.hash;
   const srcUrl = isAS ? 'https://www.artstation.com/artwork/' + p.hash : bh(p.bid, p.slug);

@@ -64,6 +64,13 @@ h2{font:700 clamp(26px,3.4vw,38px)/1.1 var(--display);letter-spacing:-.02em;marg
 .gmix .thumb{aspect-ratio:1/1}
 .g2d .thumb{aspect-ratio:4/5}
 .gfilm .thumb{aspect-ratio:16/9}
+/* link-out card (itch.io game): full row, image beside text */
+.gfilm .card.wide{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:1fr auto auto auto 1fr;column-gap:22px;row-gap:12px}
+.gfilm .card.wide .thumb{grid-column:1;grid-row:1/-1}
+.gfilm .card.wide h3{grid-column:2;grid-row:2}
+.gfilm .card.wide .meta{grid-column:2;grid-row:3}
+.gfilm .card.wide .sum{grid-column:2;grid-row:4}
+.gfilm .card.wide .thumb{aspect-ratio:1408/1117}
 .thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .card:hover .thumb img{transform:scale(1.04)}
 .badge{position:absolute;left:10px;top:10px;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(6px);font:500 11px var(--mono);letter-spacing:.04em}
@@ -148,6 +155,7 @@ h2{font:700 clamp(26px,3.4vw,38px)/1.1 var(--display);letter-spacing:-.02em;marg
   .nav{display:none}
   .hero{min-height:560px}
   .g3d,.gmix,.gfilm{grid-template-columns:1fr}
+  .gfilm .card.wide{display:flex}
   .g2d{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   .p-text{grid-template-columns:1fr}
   .job{grid-template-columns:1fr}
