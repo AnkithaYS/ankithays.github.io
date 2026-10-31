@@ -85,8 +85,8 @@ const slides = [
 ];
 const stage = $('#heroStage'), heroLink = $('#heroProject');
 slides.forEach((s,i) => { const im = new Image(); im.alt=''; im.decoding='async'; if(i>0) im.loading='lazy'; im.src = s.src;
-  /* these frames carry a title strip along the bottom (about 19% of the image); push it out of view */
-  if (s.banner){ im.style.height = '123.5%'; im.style.objectPosition = '50% 0'; }
+  /* these frames carry a title strip along the bottom (about 19% of the image); crop it off the image itself, then favour the lower part so the street stays in view */
+  if (s.banner){ im.style.objectViewBox = 'inset(0 0 19.04% 0)'; im.style.objectPosition = '50% 70%'; }
   stage.appendChild(im); });
 let cur = 0;
 function showSlide(i){
