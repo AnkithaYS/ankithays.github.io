@@ -51,7 +51,7 @@ function fallback(img){
 function card(p){
   const a = document.createElement('a');
   a.className = 'card'; a.href = '#/p/' + p.id;
-  if (p.external){ a.href = p.external; a.target = '_blank'; a.rel = 'noopener'; a.classList.add('wide'); }
+  if (p.external){ a.href = p.external; a.target = '_blank'; a.rel = 'noopener'; a.classList.add('ext'); }
   const tools = (p.tools || []).slice(0,3).map(t => '<span>' + esc(t) + '</span>').join('') + (p.external ? '<span>Play on itch.io ↗</span>' : '');
   a.innerHTML =
     '<div class="thumb"><img loading="lazy" decoding="async" alt="' + esc(p.title) + '" src="' + esc(coverOf(p)) + '">' +
