@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankitha Y.S. | 3D Environment Artist</title>
+<meta name="description" content="Portfolio of Ankitha Y.S.: 3D environment art, lighting and game environments in Unreal Engine and Blender, plus illustration and animation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="bar" id="bar">
+  <a class="brand" href="#top" data-home>Ankitha Y.S.</a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#work" data-home>3D work</a>
+    <a href="#mixed" data-home>Mixed media</a>
+    <a href="#illustration" data-home>Illustration</a>
+    <a href="#film" data-home>Film &amp; more</a>
+    <a href="#about" data-home>About</a>
+    <a href="#contact" data-home>Contact</a>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero" id="top">
+    <div class="hero-stage" id="heroStage" aria-hidden="true"></div>
+    <div class="wrap hero-copy">
+      <p class="eyebrow">Savannah, GA · Open to work</p>
+      <h1>I light and build<br>game environments.</h1>
+      <p class="lede">3D environment artist working in Unreal Engine and Blender, with a lighting focus and a background in animation and illustration.</p>
+      <div class="hero-links">
+        <a class="btn" href="#work" data-home>See the 3D work</a>
+        <a class="btn ghost" id="heroProject" href="#">Now showing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="work">
+    <div class="sec-head"><h2>3D &amp; real-time</h2><p>Environments, props and materials from <a href="https://www.artstation.com/ankitha_sunil" target="_blank" rel="noopener">ArtStation</a>.</p></div>
+    <div class="grid g3d" id="grid3d"></div>
+  </section>
+
+  <section class="wrap sec" id="mixed">
+    <div class="sec-head"><h2>Mixed media</h2><p>3D rendered in Blender, finished with 2D painting and graphic design.</p></div>
+    <div class="grid gmix" id="gridMixed"></div>
+  </section>
+
+  <section class="wrap sec" id="illustration">
+    <div class="sec-head"><h2>Illustration &amp; design</h2><p>Character design, children’s book art, posters and menus from <a href="https://www.behance.net/ankithasunil" target="_blank" rel="noopener">Behance</a>.</p></div>
+    <div class="grid g2d" id="grid2d"></div>
+  </section>
+
+  <section class="wrap sec" id="film">
+    <div class="sec-head"><h2>Film, animation &amp; more</h2><p>Short films and a Blender cryo lab, also on Behance.</p></div>
+    <div class="grid gfilm" id="gridFilm"></div>
+  </section>
+
+  <section class="wrap sec about" id="about">
+    <div class="sec-head"><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="about-main" id="aboutMain"></div>
+      <aside class="about-side" id="aboutSide"></aside>
+    </div>
+    <div class="xp" id="xp"></div>
+  </section>
+
+  <section class="wrap sec contact" id="contact">
+    <div class="sec-head"><h2>Contact</h2></div>
+    <p class="big-mail"><span id="mailText"></span> <button class="copy" id="copyMail" type="button">Copy</button></p>
+    <div class="contact-links" id="contactLinks"></div>
+  </section>
+</main>
+
+<main id="project" hidden></main>
+
+<footer class="foot wrap"><span>© Ankitha Y.S.</span><span>Work shown from ArtStation and Behance.</span></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-x" id="lbX" aria-label="Close">×</button>
+  <button class="lb-n lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-n lb-next" id="lbNext" aria-label="Next image">›</button>
+  <p class="lb-cap" id="lbCap"></p>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
