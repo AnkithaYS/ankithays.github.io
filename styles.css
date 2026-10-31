@@ -113,7 +113,7 @@ h2{font:700 clamp(26px,3.4vw,38px)/1.1 var(--display);letter-spacing:-.02em;marg
 .about-main p{max-width:62ch;margin:0 0 1em}
 .about-side h3,.xp h3{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
 .about-side section{margin-bottom:26px}
-.portrait{display:block;width:100%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:14px;margin:0 0 28px}
+.portrait{display:block;width:100%;max-width:280px;aspect-ratio:1/1;object-fit:cover;border-radius:14px;margin:32px 0 0}
 .about-side p,.about-side li{margin:0 0 6px;font-size:15px;color:var(--muted)}
 .about-side b{display:block;color:var(--fg);font-weight:600}
 .about-side ul{margin:0;padding:0;list-style:none}

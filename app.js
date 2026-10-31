@@ -101,9 +101,9 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => s
 /* about + contact */
 (function(){
   const P = PROFILE;
-  $('#aboutMain').innerHTML = P.summary.map(t => '<p>' + esc(t) + '</p>').join('');
+  $('#aboutMain').innerHTML = P.summary.map(t => '<p>' + esc(t) + '</p>').join('') +
+    '<img class="portrait" loading="lazy" decoding="async" src="ankitha.jpg" alt="Portrait of Ankitha Y.S.">';
   $('#aboutSide').innerHTML =
-    '<img class="portrait" loading="lazy" decoding="async" src="ankitha.jpg" alt="Portrait of Ankitha Y.S.">' +
     '<section><h3>Skills</h3>' + P.skills.map(s => '<p><b>' + esc(s[0]) + '</b>' + esc(s[1]) + '</p>').join('') + '</section>' +
     '<section><h3>Education</h3>' + P.education.map(e => '<p><b>' + esc(e.deg) + '</b>' + esc(e.org) + ', ' + esc(e.when) + '</p>').join('') + '</section>' +
     '<section><h3>Certifications</h3><ul>' + P.certs.map(c => '<li>' + esc(c) + '</li>').join('') + '</ul></section>';
