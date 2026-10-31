@@ -21,7 +21,7 @@ function imgSrc(item){
   const [t, p] = item;
   if (t === 'i') return ASI(p);
   if (t === 'b') return beUrl(p, BE_SIZES[0]);
-  if (t === 'r') return BE + p;
+  if (t === 'r') return /^(img\/|https?:)/.test(p) ? p : BE + p;
   return '';
 }
 function coverOf(p){
@@ -137,7 +137,7 @@ function bodyHTML(p){
     } else if (t === 'r'){
       let run = []; while (i < it.length && it[i][0] === 'r'){ run.push(it[i]); i++; }
       const imgs = run.map(r => '<img loading="lazy" decoding="async" data-zoom alt="' + esc(p.title) + '" src="' + esc(imgSrc(r)) + '">').join('');
-      out.push(run.length > 1 ? '<div class="pair">' + imgs + '</div>' : '<figure>' + imgs + '</figure>');
+      out.push(run.length > 1 ? '<div class="pair' + (run.length === 4 ? ' quad' : '') + '">' + imgs + '</div>' : '<figure>' + imgs + '</figure>');
     } else if (t === 't'){ out.push('<p class="para">' + esc(x[1]) + '</p>'); i++; }
     else if (t === 'h'){ out.push('<h3 class="sub">' + esc(x[1]) + '</h3>'); i++; }
     else if (t === 'link'){ out.push('<div class="linkrow">' + esc(x[1]) + ': <a href="https://www.artstation.com/artwork/' + p.hash + '" target="_blank" rel="noopener">open on ArtStation</a></div>'); i++; }

@@ -96,6 +96,7 @@ h2{font:700 clamp(26px,3.4vw,38px)/1.1 var(--display);letter-spacing:-.02em;marg
 .stack img{width:100%;height:auto;border-radius:4px;background:var(--panel);cursor:zoom-in}
 .stack figcaption{font:400 13px var(--mono);color:var(--muted)}
 .stack .pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.stack .pair.quad{grid-template-columns:repeat(2,minmax(0,1fr))}
 .stack h3.sub{font:700 clamp(20px,2.4vw,26px) var(--display);margin:30px 0 4px}
 .stack .para{max-width:68ch;margin:6px 0}
 .video{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000}
